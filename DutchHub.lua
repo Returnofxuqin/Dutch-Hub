@@ -193,7 +193,7 @@ local BetterRainbowColorHex = {
 	"#FF0031",
 	"#FF001F"
 }
-print('TurningGlobe ily thanks for showcasing / szze#6220')
+print('fUCK ROBLOX / Dutch')
 if getgenv().loadedRR then
 	return
 else
@@ -258,7 +258,7 @@ local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or 
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
 local httpservice = game:GetService('HttpService')
 if queueonteleport then
-  queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Returnofxuqin/Dutch-Hub/main/DutchHub.lua'))()")
+  queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/old.lua'))()")
 end
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/UI"))()
 function forceServerHop()
@@ -848,7 +848,7 @@ local function rgb(hex)
 	return Color3.new(r, g, b)
 end
 
-local Window = library:AddWindow("dutch#5293 | Hop On Peak",
+local Window = library:AddWindow("dutch#5293 | 🏂",
   {
 	main_color = Color3.fromRGB(80, 80, 80),
 	min_size = Vector2.new(500, 563),
@@ -1654,7 +1654,7 @@ Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()
 				oldWebhook(Players.LocalPlayer.Name .. ' | Donation amount: ' .. tostring(Players.LocalPlayer.leaderstats.Raised.Value - RaisedC) .. ' | [A/T]: ' .. tostring(math.floor((Players.LocalPlayer.leaderstats.Raised.Value - RaisedC) * 0.6)) .. ' | Total: ' .. tostring(Players.LocalPlayer.leaderstats.Raised.Value))
 			end
 		end
-		oldWebhook('Hop on peak: Dutch | 🏂')
+		oldWebhook('Hop on peak Dutch | 🏂')
 	end
 	if getgenv().settings.serverHopAfterDonation == true then
 		task.spawn(function()
