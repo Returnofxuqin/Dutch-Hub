@@ -1,3 +1,9 @@
+--[[
+	This property is protected.
+	You are not allowed to claim this as your own.
+	Removal of initial credits to the authors is prohibited.
+]]
+
 if hookmetamethod and typeof(hookmetamethod) == 'function' then
 	local oldHook
 	oldHook = hookmetamethod(game, "__namecall", function(self, ...)
@@ -187,7 +193,7 @@ local BetterRainbowColorHex = {
 	"#FF0031",
 	"#FF001F"
 }
-print('Fuck Roblox / dutch#5293')
+print('TurningGlobe ily thanks for showcasing / szze#6220')
 if getgenv().loadedRR then
 	return
 else
@@ -254,7 +260,7 @@ local httpservice = game:GetService('HttpService')
 if queueonteleport then
   queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/old.lua'))()")
 end
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Returnofxuqin/Dutch-Hub/main/Dutch_hub_ui.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/UI"))()
 function forceServerHop()
 	--local isVip = game:GetService('RobloxReplicatedStorage').GetServerType:InvokeServer()
 	--if isVip == "VIPServer" then return end
@@ -384,7 +390,8 @@ local sNames = {
 	"pingEveryone",
 	"pingAboveDono",
 	"removeHeadNametag",
-	"gravitySwitch"
+	"gravitySwitch",
+	"jumpBoost"
 }
 
 local positionX = workspace:WaitForChild('Boomboxes'):WaitForChild('Spawn')
@@ -469,6 +476,7 @@ local sValues = {
 	},
 	false,
 	1000,
+	false,
 	false,
 	false
 }
@@ -794,7 +802,7 @@ local function webhook(raised, donor)
 			},
 		},
 		["footer"] = {
-			["text"] = "made by szze#6220 | https://discord.gg/SuNqfnK",
+			["text"] = "made by dutch#5293 | 🏂",
 		},
 		["timestamp"] = string.format("%d-%d-%dT%02d:%02d:%02dZ", a.year, a.month, a.day, a.hour, a.min, a.sec)
 	}
@@ -840,7 +848,7 @@ local function rgb(hex)
 	return Color3.new(r, g, b)
 end
 
-local Window = library:AddWindow("szze#6220 | .gg/SuNqfnK",
+local Window = library:AddWindow("dutch#5293 | Hop On Peak",
   {
 	main_color = Color3.fromRGB(80, 80, 80),
 	min_size = Vector2.new(500, 563),
@@ -1123,7 +1131,7 @@ webhookBox.Text = getgenv().settings.webhookBox
 webhookTab:AddLabel('Press Enter to Save')
 webhookTab:AddButton("Test", function()
 	if getgenv().settings.webhookBox then
-		oldWebhook("webhook works | dotgg")
+		oldWebhook("webhook works | Hop On Peak Dutch 🏂")
 	end
 end)
 
@@ -1317,6 +1325,12 @@ local spinToggle = otherTab:AddSwitch('Spin [1R$ = +1 speed]', function(bool)
 	elseif not getgenv().settings.spinSet and Players.LocalPlayer.Character.Humanoid.RootPart:FindFirstChild('Spin') then
 		Players.LocalPlayer.Character.Humanoid.RootPart.Spin:Destroy()
 	end
+	saveSettings()
+end)
+	
+local jumpSwitcher = otherTab:AddSwitch('1R$ = +1 jump power', function(bool)
+	if settingsLock then return end
+	getgenv().settings.jumpBoost = bool
 	saveSettings()
 end)
 	
@@ -1640,7 +1654,7 @@ Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()
 				oldWebhook(Players.LocalPlayer.Name .. ' | Donation amount: ' .. tostring(Players.LocalPlayer.leaderstats.Raised.Value - RaisedC) .. ' | [A/T]: ' .. tostring(math.floor((Players.LocalPlayer.leaderstats.Raised.Value - RaisedC) * 0.6)) .. ' | Total: ' .. tostring(Players.LocalPlayer.leaderstats.Raised.Value))
 			end
 		end
-		oldWebhook('Hop on peak: <https://discord.gg/SuNqfnK> | 🏂')
+		oldWebhook('Hop on peak: Dutch | 🏂')
 	end
 	if getgenv().settings.serverHopAfterDonation == true then
 		task.spawn(function()
@@ -1650,6 +1664,9 @@ Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()
 	if Players.LocalPlayer.Character.Humanoid.RootPart:FindFirstChild('Spin') and getgenv().settings.spinSet == true then
 		local spin = Players.LocalPlayer.Character.Humanoid.RootPart:FindFirstChild('Spin')
 		spin.AngularVelocity = Vector3.new(0, xspin, 0)
+	end
+	if getgenv().settings.jumpBoost then
+	  pcall(function() Players.LocalPlayer.Character.Humanoid.JumpPower = Players.LocalPlayer.Character.Humanoid.JumpPower + (Players.LocalPlayer.leaderstats.Raised.Value - RaisedC) end)		
 	end
 	pcall(function()
 	   if getgenv().settings.gravitySwitch then
